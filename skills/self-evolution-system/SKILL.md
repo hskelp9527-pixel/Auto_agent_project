@@ -1,9 +1,9 @@
 ---
 name: self-evolution-system
-description: 基于 autoresearch 理念的 Web 应用上线前自我迭代系统。4轮迭代验证：内容完整性（60%）、设计系统（20%）、代码质量（10%）、浏览器功能（10%）。源自 Andrej Karpathy 的 autoresearch 项目思想，改造为 Web 应用 QA 领域。确保零404、零按钮失效、零占位符，真正做到"开箱即用"。
+description: 基于 autoresearch 理念的开发项目自我迭代系统。至少4轮迭代验证：内容完整性（60%）、设计系统（20%）、代码质量（10%）、功能验证（10%）。源自 Andrej Karpathy 的 autoresearch 项目思想，改造为通用开发项目 QA 领域。适用于任意开发类项目（Web/移动/桌面/后端等），在 Web 应用等 UI 可见项目上表现最佳。确保零404、零按钮失效、零占位符，真正做到"开箱即用"。根据项目实际情况可增加第5+轮专项验证。
 ---
 
-# 自我迭代系统 (Self-Evolution System for Web App QA)
+# 自我迭代系统 (Self-Evolution System for Development Projects)
 
 ## 理念来源
 
@@ -11,9 +11,17 @@ description: 基于 autoresearch 理念的 Web 应用上线前自我迭代系统
 
 > "Research is now entirely the domain of autonomous swarms of AI agents"
 
-**改造为 Web 应用 QA 领域**：
+**改造为通用开发项目 QA 领域**：
 
 > "Quality Assurance is now entirely the domain of autonomous AI agents before user sees it"
+
+**最佳应用场景**：
+- ✅ Web 应用（最佳适配）
+- ✅ 移动应用
+- ✅ 桌面应用
+- ✅ 后端服务
+- ✅ CLI 工具
+- ✅ 任意开发类项目
 
 ## 核心使命
 
@@ -24,7 +32,7 @@ description: 基于 autoresearch 理念的 Web 应用上线前自我迭代系统
 ## 何时触发
 
 **必须使用此系统的情况**：
-- 完成任何 Web 应用开发后
+- 完成任何开发项目后（Web/移动/桌面/后端等）
 - 修复重要 bug 并准备提交后
 - 添加新功能并准备展示后
 - 用户要求"启动项目"、"部署"、"可以用了"之前
@@ -504,15 +512,23 @@ description: 基于 autoresearch 理念的 Web 应用上线前自我迭代系统
 第3轮迭代（代码质量 10分）
   ↓ 通过？→ 否 → 修复问题 → 重新第3轮
   ↓ 是
-第4轮迭代（浏览器功能 10分）
+第4轮迭代（功能验证 10分）
   ↓ 通过？→ 否 → 修复问题 → 重新第4轮
   ↓ 是
 计算总分 ≥ 95？
-  ↓ 否
-修复剩余问题 → 交付
+  ↓ 否 → 修复剩余问题 → 交付
   ↓ 是
+是否还有未解决问题？
+  ↓ 是 → 增加专项验证轮（第5+轮）→ 重新验证
+  ↓ 否
 直接交付 🎉
 ```
+
+**重要说明**：
+- ✅ 前4轮是基础验证，适用于所有项目
+- ✅ 第5+轮根据项目实际情况灵活添加
+- ✅ 例如：性能优化轮、安全检查轮、兼容性轮等
+- ✅ 不是固定4轮，而是**至少4轮**
 
 ## 关键原则
 
@@ -566,9 +582,10 @@ description: 基于 autoresearch 理念的 Web 应用上线前自我迭代系统
 - 目标：优化模型性能（降低 val_bpb）
 
 **本系统改造**：
-- 领域：Web 应用开发
-- 方法：4 轮迭代验证（内容完整性 → 设计系统 → 代码质量 → 浏览器功能）
+- 领域：任意开发类项目（Web/移动/桌面/后端等）
+- 方法：多轮迭代验证（至少4轮，根据需要增加第5+轮）
 - 目标：确保上线前质量（零 bug、零 404、功能完整）
+- 最佳适配：Web 应用等 UI 可见项目
 
 **核心共同点**：
 - ✅ AI 自主迭代
