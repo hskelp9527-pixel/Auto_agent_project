@@ -88,17 +88,11 @@ project/
 - `references/example-workflow.md` - 示例工作流程
 - `references/key-principles.md` - 关键原则
 
-## 理念来源
+## 🙏 致谢
 
-本系统基于 [autoresearch](https://github.com/karpathy/autoresearch) (Andrej Karpathy) 的核心思想设计。
+感谢 Andrej Karpathy 的 [autoresearch](https://github.com/karpathy/autoresearch) 项目提供的核心思想和灵感。
 
-**autoresearch 原版**：
-- 领域：机器学习研究
-- 方法：AI 修改 train.py → 训练 → 评估 → 保留或丢弃
-
-**本系统改造**：
-- 领域：通用开发项目
-- 方法：AI 读取 task.md → 开发 → 评估 → 加分确认/减分重写
+**Thanks to Andrej Karpathy's [autoresearch](https://github.com/karpathy/autoresearch) project for the core idea and inspiration.**
 
 ## 版本历史
 
