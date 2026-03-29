@@ -1,9 +1,19 @@
 ---
 name: self-evolution-system
-description: 自我迭代系统 - 多轮迭代验证流程。第1轮检查内容完整性（权重60%），第2轮检查设计系统（权重20%），第3轮检查代码质量（权重10%），第4轮检查浏览器功能（权重10%）。每轮不通过则重新该轮，明确显示"第X轮"迭代次数。确保内容完整、设计优秀、代码健壮，真正做到"开箱即用"。
+description: 基于 autoresearch 理念的 Web 应用上线前自我迭代系统。4轮迭代验证：内容完整性（60%）、设计系统（20%）、代码质量（10%）、浏览器功能（10%）。源自 Andrej Karpathy 的 autoresearch 项目思想，改造为 Web 应用 QA 领域。确保零404、零按钮失效、零占位符，真正做到"开箱即用"。
 ---
 
-# 自我迭代系统 (Self-Evolution System)
+# 自我迭代系统 (Self-Evolution System for Web App QA)
+
+## 理念来源
+
+**基于 [autoresearch](https://github.com/karpathy/autoresearch)** (Andrej Karpathy) 的核心思想：
+
+> "Research is now entirely the domain of autonomous swarms of AI agents"
+
+**改造为 Web 应用 QA 领域**：
+
+> "Quality Assurance is now entirely the domain of autonomous AI agents before user sees it"
 
 ## 核心使命
 
@@ -545,3 +555,34 @@ description: 自我迭代系统 - 多轮迭代验证流程。第1轮检查内容
 ---
 
 **记住**：这个系统的目标是在用户看到项目之前，发现并修复所有问题。不要让用户成为你的测试员！
+
+## 📖 理念来源
+
+本系统基于 [autoresearch](https://github.com/karpathy/autoresearch) (Andrej Karpathy) 的核心思想设计。
+
+**autoresearch 原版**：
+- 领域：机器学习研究
+- 方法：AI 修改 `train.py` → 训练 5 分钟 → 评估 → 保留或丢弃
+- 目标：优化模型性能（降低 val_bpb）
+
+**本系统改造**：
+- 领域：Web 应用开发
+- 方法：4 轮迭代验证（内容完整性 → 设计系统 → 代码质量 → 浏览器功能）
+- 目标：确保上线前质量（零 bug、零 404、功能完整）
+
+**核心共同点**：
+- ✅ AI 自主迭代
+- ✅ 基于证据的决策
+- ✅ 持续改进直到达到标准
+- ✅ 完整的实验历史和追踪
+
+**关键差异**：
+- autoresearch：自动训练，评估指标是 val_bpb
+- 本系统：手动验证，评估标准是多维度评分（100分制）
+- autoresearch：无人值守持续优化
+- 本系统：每轮不通过必须重新该轮（零容忍）
+
+## 🙏 致谢
+
+感谢 Andrej Karpathy 的 autoresearch 项目提供的核心思想和灵感。
+
