@@ -165,6 +165,52 @@ description: 自我迭代系统 - 多轮迭代验证流程。第1轮检查内容
    - ❌ 链接指向不存在的路由（404错误）
    - ❌ 删除操作无确认对话框（误删风险）
 
+8. **路由存在性检查** ⚠️ **零容忍项**
+   ```bash
+   # 检查所有按钮链接的页面是否都存在
+   # 1. 提取所有Link和按钮的href/target
+   grep -r "href=.*edit\|to=.*edit" app/ | grep -o "href=\"[^\"]*\"" | sort -u
+
+   # 2. 检查编辑页是否存在
+   find app -name "edit" -type d
+   find app -path "*/[id]/edit/page.tsx"
+
+   # 3. 检查详情页是否存在
+   find app -path "*/[id]/page.tsx"
+
+   # 4. 验证所有必需的路由
+   ls app/orders/[id]/page.tsx          # 订单详情
+   ls app/orders/[id]/edit/page.tsx     # 订单编辑
+   ls app/products/[id]/page.tsx        # 产品详情
+   ls app/products/[id]/edit/page.tsx   # 产品编辑
+   ls app/customers/[id]/page.tsx       # 客户详情
+   ls app/customers/[id]/edit/page.tsx  # 客户编辑
+   ```
+
+   **零容忍规则**：
+   - ✅ **所有按钮链接的页面都必须存在**
+   - ✅ **绝不出现404错误**
+   - ✅ **哪怕功能不齐全，页面也必须能打开**
+   - ✅ **每个实体至少有：列表页、详情页、编辑页**
+
+   **最低页面要求**：
+   - ✅ 订单：列表、详情、编辑、创建
+   - ✅ 产品：列表、详情、编辑、创建
+   - ✅ 客户：列表、详情、编辑、创建
+   - ✅ 库存：列表、详情、编辑
+   - ✅ 发货：列表、详情、编辑
+
+   **常见404错误**：
+   - ❌ `/orders/[id]/edit` - 订单编辑页不存在
+   - ❌ `/products/[id]/edit` - 产品编辑页不存在
+   - ❌ `/customers/[id]/edit` - 客户编辑页不存在
+   - ❌ `/customers/[id]` - 客户详情页不存在
+   - ❌ `/inventory/[id]` - 库存详情页不存在
+
+   **评分标准**：
+   - **发现一个404，功能可用性5分全部扣除**
+   - **即使总分60分，出现404也视为不通过**
+
 **内容完整性评分**（总分60分）：
 - 页面完整性：18分
 - 表单完整性：13分
